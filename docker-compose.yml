@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: api-python-dev-ops
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mapeia o diretório atual para o /app no contêiner
+      # Isso permite o hot-reload e persiste o banco de dados SQLite no host.
+      - .:/app
+
